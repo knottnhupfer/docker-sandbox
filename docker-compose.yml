@@ -1,0 +1,17 @@
+---
+version: '3'
+
+services:
+  app:
+    # container_name: app-service
+    build:
+      context:  ./app
+      dockerfile: Dockerfile
+
+  proxy:
+    # container_name: nginx-proxy-service
+    build:
+      context:  ./proxy
+      dockerfile: Dockerfile
+    ports:
+      - "9001:80"
